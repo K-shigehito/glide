@@ -5,15 +5,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "lint": "eslint --fix '{src,tests}/**/*.{ts,js}'",
+    "format": "prettier --write '{src,tests}/**/*.{ts,js}'"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shigehito Koyama",
   "license": "ISC",
   "dependencies": {
+    "del": "^7.0.0",
+    "handlebars": "^4.7.7",
+    "marked": "^4.2.12",
     "yargs": "^17.6.2"
   },
   "devDependencies": {
+    "@types/marked": "^4.0.8",
     "@types/yargs": "^17.0.22",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
