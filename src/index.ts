@@ -4,10 +4,8 @@ import { readConfig } from './lib/readConfig';
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
 
-console.log('******', readConfig());
-
 yargs(hideBin(process.argv))
   .commandDir('commands')
-  // .config(readConfig())
+  .config(readConfig())
   .strict()
   .alias({ h: 'help', v: 'version' }).argv;
