@@ -28,7 +28,6 @@ export const convertMdToHtml = async (
   if (mdFilePaths.length === 0) {
     throw new Error('Can not find markdown directory of files!');
   }
-  console.log(mdFilePaths);
   // const template = readyTemplate(templatePath);
 
   return mdFilePaths.map((mdFilePath: string) => {

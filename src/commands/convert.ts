@@ -3,7 +3,7 @@ import { cleanDir } from '../lib/clearDir';
 import { convertMdToHtml } from '../lib/convertMdToHtml';
 // import { writeFileRecursive } from '../lib/writeFileRecursive';
 
-export const command = 'convert [options]';
+export const command = ['* [options]', 'convert'];
 export const desc = 'Convert from markdown to html';
 
 export const builder = (yargs: Argv) => {
