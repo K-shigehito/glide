@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import yargs from "yargs/yargs";
-import { hideBin } from "yargs/helpers";
+import yargs from 'yargs/yargs';
+import { hideBin } from 'yargs/helpers';
 
 yargs(hideBin(process.argv))
-  .commandDir("commands")
+  .commandDir('commands')
   .strict()
-  .alias({ h: "help", v: "version" }).argv;
+  .alias({ h: 'help', v: 'version' }).argv;
