@@ -1,7 +1,7 @@
 import type { Argv } from 'yargs';
 import { cleanDir } from '../lib/clearDir';
 import { convertMdToHtml } from '../lib/convertMdToHtml';
-// import { writeFileRecursive } from '../lib/writeFileRecursive';
+import { writeFileRecursive } from '../lib/writeFileRecursive';
 
 export const command = ['* [options]', 'convert'];
 export const desc = 'Convert from markdown to html';
@@ -38,15 +38,14 @@ export const handler = async (argv: any) => {
     argv.dest,
     argv.template
   );
-  console.log(convertedInfoList);
-  // const promiseList = convertedInfoList.map((convertedInfo) => {
-  //   const { destPath, htmlString } = convertedInfo;
-  //   console.log(`  ${destPath}`);
-  //   // ファイルの書き出しは非同期で行うため、Promiseが返される
-  //   return writeFileRecursive(destPath, htmlString);
-  // });
+  const promiseList = convertedInfoList.map((convertedInfo) => {
+    const { destPath, htmlString } = convertedInfo;
+    console.log(`  ${destPath}`);
+    // ファイルの書き出しは非同期で行うため、Promiseが返される
+    return writeFileRecursive(destPath, htmlString);
+  });
 
-  // Promise.all(promiseList).then(() => {
-  //   console.log("<<< done!");
-  // });
+  Promise.all(promiseList).then(() => {
+    console.log('<<< done!');
+  });
 };

@@ -9,9 +9,6 @@ export const srcPathToDestPath = (
   const absoluteDestDirPath = path.resolve(process.cwd(), destDirPath);
   const relativeMdFilePath = path.relative(absoluteSourceDirPath, mdFilePath);
   const baseName = path.basename(relativeMdFilePath, '.md');
-  return path.join(
-    absoluteDestDirPath,
-    path.dirname(relativeMdFilePath),
-    `${baseName}.html`
-  );
+
+  return path.join(absoluteDestDirPath, `${baseName}.html`);
 };
