@@ -13,12 +13,13 @@
   "author": "Shigehito Koyama",
   "license": "ISC",
   "dependencies": {
-    "find-up": "^6.3.0",
+    "express": "^4.18.2",
     "handlebars": "^4.7.7",
     "marked": "^4.2.12",
     "yargs": "^17.6.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.16",
     "@types/marked": "^4.0.8",
     "@types/yargs": "^17.0.22",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
